@@ -16,13 +16,13 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#collections" className="text-sm font-medium transition-smooth hover:text-accent">
+            <a href="/#collections" className="text-sm font-medium transition-smooth hover:text-accent">
               Collections
             </a>
-            <a href="#women" className="text-sm font-medium transition-smooth hover:text-accent">
+            <a href="/women" className="text-sm font-medium transition-smooth hover:text-accent">
               Women
             </a>
-            <a href="#men" className="text-sm font-medium transition-smooth hover:text-accent">
+            <a href="/men" className="text-sm font-medium transition-smooth hover:text-accent">
               Men
             </a>
             <a href="#accessories" className="text-sm font-medium transition-smooth hover:text-accent">
@@ -58,13 +58,13 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-3 border-t border-border animate-fade-in">
-            <a href="#collections" className="block text-sm font-medium transition-smooth hover:text-accent">
+            <a href="/#collections" className="block text-sm font-medium transition-smooth hover:text-accent">
               Collections
             </a>
-            <a href="#women" className="block text-sm font-medium transition-smooth hover:text-accent">
+            <a href="/women" className="block text-sm font-medium transition-smooth hover:text-accent">
               Women
             </a>
-            <a href="#men" className="block text-sm font-medium transition-smooth hover:text-accent">
+            <a href="/men" className="block text-sm font-medium transition-smooth hover:text-accent">
               Men
             </a>
             <a href="#accessories" className="block text-sm font-medium transition-smooth hover:text-accent">

@@ -7,12 +7,12 @@ const Collections = () => {
     {
       title: "Women's Collection",
       image: womenCollection,
-      link: "#women",
+      link: "/women",
     },
     {
       title: "Men's Collection",
       image: menCollection,
-      link: "#men",
+      link: "/men",
     },
     {
       title: "Accessories",
