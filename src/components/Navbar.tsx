@@ -1,9 +1,13 @@
 import { ShoppingBag, Menu, Search, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { totalItems } = useCart();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -41,8 +45,18 @@ const Navbar = () => {
             <Button variant="ghost" size="icon" className="transition-smooth hover:text-accent">
               <User className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="transition-smooth hover:text-accent">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="relative transition-smooth hover:text-accent"
+              onClick={() => navigate("/checkout")}
+            >
               <ShoppingBag className="h-5 w-5" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
             </Button>
             <Button
               variant="ghost"

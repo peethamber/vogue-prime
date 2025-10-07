@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 
 const MenPage = () => {
+  const { addToCart } = useCart();
+  
   const products = [
     {
       id: 1,
@@ -89,20 +93,30 @@ const MenPage = () => {
                 className="group animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative overflow-hidden shadow-elegant mb-4">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full aspect-square object-cover transition-smooth group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-smooth" />
-                </div>
+                <Link to={`/product/men/${product.id}`}>
+                  <div className="relative overflow-hidden shadow-elegant mb-4 cursor-pointer">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full aspect-square object-cover transition-smooth group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-smooth" />
+                  </div>
+                </Link>
                 <div className="space-y-2">
                   <p className="text-sm text-muted-foreground">{product.category}</p>
-                  <h3 className="font-semibold">{product.name}</h3>
+                  <Link to={`/product/men/${product.id}`}>
+                    <h3 className="font-semibold hover:text-primary transition-smooth cursor-pointer">
+                      {product.name}
+                    </h3>
+                  </Link>
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-bold">${product.price}</span>
-                    <Button size="sm" className="gap-2">
+                    <Button 
+                      size="sm" 
+                      className="gap-2"
+                      onClick={() => addToCart({ ...product, gender: "men" })}
+                    >
                       <ShoppingBag className="h-4 w-4" />
                       Add
                     </Button>
