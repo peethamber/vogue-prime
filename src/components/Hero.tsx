@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-fashion.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden" aria-label="Hero banner showcasing premium fashion collection">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -23,10 +23,10 @@ const Hero = () => {
         <p className="text-lg sm:text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto font-light">
           Discover our curated collection of premium fashion pieces designed for the modern individual
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>
           <Button 
             size="lg" 
-            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-smooth group"
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-smooth hover-scale group"
           >
             Shop Collection
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
@@ -34,7 +34,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 transition-smooth"
+            className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover-scale transition-smooth"
           >
             Explore Trends
           </Button>

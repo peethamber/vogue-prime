@@ -25,7 +25,7 @@ const Collections = () => {
   ];
 
   return (
-    <section id="collections" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+    <section id="collections" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary" aria-label="Shop by collection categories">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">Shop by Collection</h2>
@@ -39,19 +39,20 @@ const Collections = () => {
             <a
               key={index}
               href={collection.link}
-              className="group relative overflow-hidden shadow-elegant transition-smooth hover:shadow-xl animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group relative overflow-hidden shadow-elegant transition-all duration-500 hover:shadow-2xl animate-scale-in hover-scale rounded-lg"
+              style={{ animationDelay: `${index * 0.15}s`, opacity: 0, animationFillMode: 'forwards' }}
+              aria-label={`Browse ${collection.title}`}
             >
               <div className="aspect-square overflow-hidden">
                 <img
                   src={collection.image}
                   alt={collection.alt}
-                  className="w-full h-full object-cover transition-smooth group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
-                <h3 className="text-2xl font-bold text-primary-foreground">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex items-end p-6 transition-all duration-500 group-hover:from-primary">
+                <h3 className="text-2xl font-bold text-primary-foreground transform transition-all duration-500 group-hover:translate-y-[-4px]">
                   {collection.title}
                 </h3>
               </div>

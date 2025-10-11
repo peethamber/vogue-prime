@@ -38,7 +38,7 @@ const FeaturedProducts = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-20 px-4 sm:px-6 lg:px-8" aria-label="Featured products collection">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">Featured Products</h2>
@@ -49,38 +49,38 @@ const FeaturedProducts = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
-            <div
+            <article
               key={product.id}
               className="group animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.12}s`, opacity: 0, animationFillMode: 'forwards' }}
             >
-              <div className="relative overflow-hidden mb-4 shadow-elegant transition-smooth group-hover:shadow-xl">
+              <div className="relative overflow-hidden mb-4 shadow-elegant transition-all duration-500 hover:shadow-2xl rounded-lg">
                 <img
                   src={product.image}
                   alt={`${product.name} - Premium ${product.category} from LUXE Fashion`}
-                  className="w-full h-auto object-cover transition-smooth group-hover:scale-105"
+                  className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-smooth" />
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500" />
               </div>
               
               <div className="space-y-2">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider transition-colors duration-300 group-hover:text-primary">
                   {product.category}
                 </p>
-                <h3 className="font-semibold text-lg">{product.name}</h3>
+                <h3 className="font-semibold text-lg transition-all duration-300 group-hover:text-primary">{product.name}</h3>
                 <div className="flex items-center justify-between">
-                  <p className="text-xl font-bold">{product.price}</p>
+                  <p className="text-xl font-bold transition-transform duration-300 group-hover:scale-105">{product.price}</p>
                   <Button 
                     size="sm" 
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth group/btn"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover-scale group/btn"
                   >
-                    <ShoppingCart className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-smooth" />
+                    <ShoppingCart className="h-4 w-4 mr-2 transition-transform duration-300 group-hover/btn:scale-110 group-hover/btn:rotate-12" />
                     Add
                   </Button>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
