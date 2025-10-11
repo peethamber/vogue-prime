@@ -57,8 +57,9 @@ const FeaturedProducts = () => {
               <div className="relative overflow-hidden mb-4 shadow-elegant transition-smooth group-hover:shadow-xl">
                 <img
                   src={product.image}
-                  alt={product.name}
+                  alt={`${product.name} - Premium ${product.category} from LUXE Fashion`}
                   className="w-full h-auto object-cover transition-smooth group-hover:scale-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-smooth" />
               </div>

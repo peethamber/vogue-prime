@@ -8,16 +8,19 @@ const Collections = () => {
       title: "Women's Collection",
       image: womenCollection,
       link: "/women",
+      alt: "Luxury women's fashion collection featuring premium designer clothing and accessories",
     },
     {
       title: "Men's Collection",
       image: menCollection,
       link: "/men",
+      alt: "Premium men's fashion collection with contemporary designer clothing",
     },
     {
       title: "Accessories",
       image: accessoriesCollection,
       link: "#accessories",
+      alt: "Designer accessories collection including bags, jewelry, and fashion accessories",
     },
   ];
 
@@ -42,8 +45,9 @@ const Collections = () => {
               <div className="aspect-square overflow-hidden">
                 <img
                   src={collection.image}
-                  alt={collection.title}
+                  alt={collection.alt}
                   className="w-full h-full object-cover transition-smooth group-hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">

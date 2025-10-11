@@ -4,16 +4,20 @@ import Collections from "@/components/Collections";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <Hero />
-      <Collections />
-      <FeaturedProducts />
-      <Newsletter />
+      <main>
+        <Hero />
+        <Collections />
+        <FeaturedProducts />
+        <Newsletter />
+      </main>
       <Footer />
+      <ChatBot />
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Fashion Collection"
+          alt="Premium luxury fashion collection featuring contemporary designer clothing for men and women"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 hero-gradient" />
@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-primary-foreground px-4 sm:px-6 lg:px-8 max-w-4xl animate-fade-in">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          Redefine Your Style
+          Premium Designer Fashion Collection
         </h1>
         <p className="text-lg sm:text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto font-light">
           Discover our curated collection of premium fashion pieces designed for the modern individual
